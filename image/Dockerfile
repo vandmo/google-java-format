@@ -1,4 +1,4 @@
-FROM openjdk:11-jdk-slim@sha256:b577374a385b86572caad3050b122b6aa6dd911cf37421667d248e9d1c638e44
+FROM openjdk:14-jdk-slim@sha256:9597bf1ca7706da04d94ab53e3a8277f23d2153b166c1b0cd11b866802961b69
 
 MAINTAINER Mikael Vandmo <mikael@vandmo.se>
 
