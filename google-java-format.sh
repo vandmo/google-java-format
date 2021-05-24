@@ -1,4 +1,10 @@
 #!/bin/bash
 set -eu -o pipefail
 
-java -jar /opt/google-java-format-1.9-all-deps.jar "$@"
+java \
+ --add-exports jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED \
+ --add-exports jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED \
+ --add-exports jdk.compiler/com.sun.tools.javac.parser=ALL-UNNAMED \
+ --add-exports jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED \
+ --add-exports jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED \
+ -jar /opt/google-java-format-1.10.0-all-deps.jar "$@"
