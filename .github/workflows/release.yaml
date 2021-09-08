@@ -18,7 +18,7 @@ jobs:
         password: ${{secrets.DOCKERHUB_TOKEN}}
 
     - uses: actions/github-script@v4
-      id: set-version
+      id: set_version
       with:
         script: |
           const tag = context.ref.substring(10)
@@ -31,10 +31,17 @@ jobs:
             'no-dash': no_dash
           }
 
-    - name: Build and Push
-      uses: docker/build-push-action@v2
-      with:
-        push: true
-        tags: |
-          ${{secrets.DOCKERHUB_USERNAME}}/google-java-format:latest
-          ${{secrets.DOCKERHUB_USERNAME}}/google-java-format:${{steps.set-version.outputs.no-dash}}
+     - name: Test things
+       run: echo ${{steps.set_version.outputs}}
+
+     - name: Test things2
+       run: echo ${{steps.set_version}}
+     - name: Test things3
+       run: echo ${{steps.set_version.outputs.tag}}
+#    - name: Build and Push
+#      uses: docker/build-push-action@v2
+#      with:
+#        push: true
+#        tags: |
+#          ${{secrets.DOCKERHUB_USERNAME}}/google-java-format:latest
+#          ${{secrets.DOCKERHUB_USERNAME}}/google-java-format:${{steps.set-version.outputs.no-dash}}
