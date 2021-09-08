@@ -26,22 +26,18 @@ jobs:
           const no_v = tag.replace('v', '')
           const dash_index = no_v.lastIndexOf('-')
           const no_dash = (dash_index > -1) ?  no_v.substring(0, dash_index) : no_v
-          const result = {
-            'tag': tag,
-            'no-v': no_v,
-            'no-dash': no_dash
-          }
-          console.log(result)
-          return result
+          core.setOutput('tag', tag)
+          core.setOutput('no-v', no_v)
+          core.setOutput('no-dash', no_dash)
 
     - name: Test things
       run: echo ${{steps.set_version.outputs.result}}
 
     - name: Test things
-      run: echo ${{steps.set_version.outputs.result.tag}}
+      run: echo ${{steps.set_version.outputs.tag}}
 
     - name: Test things2
-      run: echo ${{steps.set_version}}
+      run: echo ${{steps.set_version.outputs.no-dash}}
 
     - name: Test things3
       run: echo ${{steps.set_version.outputs.tag}}
