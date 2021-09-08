@@ -34,6 +34,6 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags:
-        - ${{secrets.DOCKERHUB_USERNAME}}/google-java-format:latest
-        - ${{secrets.DOCKERHUB_USERNAME}}/google-java-format:${{steps.set-version.outputs.result.no-dash}}
+        tags: |
+          ${{secrets.DOCKERHUB_USERNAME}}/google-java-format:latest
+          ${{secrets.DOCKERHUB_USERNAME}}/google-java-format:${{steps.set-version.outputs.result.no-dash}}
