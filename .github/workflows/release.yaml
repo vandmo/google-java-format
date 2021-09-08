@@ -17,7 +17,8 @@ jobs:
         username: ${{secrets.DOCKERHUB_USERNAME}}
         password: ${{secrets.DOCKERHUB_TOKEN}}
 
-    - uses: actions/github-script@v4
+    - name: Set Versions
+      uses: actions/github-script@v4
       id: set_version
       with:
         script: |
@@ -25,19 +26,23 @@ jobs:
           const no_v = tag.replace('v', '')
           const dash_index = no_v.lastIndexOf('-')
           const no_dash = (dash_index > -1) ?  no_v.substring(0, dash_index) : no_v
-          return {
+          const result = {
             'tag': tag,
             'no-v': no_v,
             'no-dash': no_dash
           }
+          console.log(result)
+          return result
 
-     - name: Test things
-       run: echo ${{steps.set_version.outputs}}
+    - name: Test things
+      run: echo ${{steps.set_version.outputs}}
 
-     - name: Test things2
-       run: echo ${{steps.set_version}}
-     - name: Test things3
-       run: echo ${{steps.set_version.outputs.tag}}
+    - name: Test things2
+      run: echo ${{steps.set_version}}
+
+    - name: Test things3
+      run: echo ${{steps.set_version.outputs.tag}}
+
 #    - name: Build and Push
 #      uses: docker/build-push-action@v2
 #      with:
