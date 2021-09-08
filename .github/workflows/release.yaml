@@ -35,7 +35,10 @@ jobs:
           return result
 
     - name: Test things
-      run: echo ${{steps.set_version.outputs}}
+      run: echo ${{steps.set_version.outputs.result}}
+
+    - name: Test things
+      run: echo ${{steps.set_version.outputs.result.tag}}
 
     - name: Test things2
       run: echo ${{steps.set_version}}
