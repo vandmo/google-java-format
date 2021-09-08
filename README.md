@@ -1,4 +1,6 @@
 # google-java-format
+![build](https://github.com/vandmo/google-java-format/actions/workflows/build.yaml/badge.svg)
+![release](https://github.com/vandmo/google-java-format/actions/workflows/release.yaml/badge.svg)
 
 Dockerization of https://github.com/google/google-java-format
 

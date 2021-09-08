@@ -37,4 +37,4 @@ jobs:
         push: true
         tags: |
           ${{secrets.DOCKERHUB_USERNAME}}/google-java-format:latest
-          ${{secrets.DOCKERHUB_USERNAME}}/google-java-format:${{steps.set-version.outputs.result.no-dash}}
+          ${{secrets.DOCKERHUB_USERNAME}}/google-java-format:${{steps.set-version.outputs.no-dash}}
