@@ -30,22 +30,10 @@ jobs:
           core.setOutput('no-v', no_v)
           core.setOutput('no-dash', no_dash)
 
-    - name: Test things
-      run: echo ${{steps.set_version.outputs.result}}
-
-    - name: Test things
-      run: echo ${{steps.set_version.outputs.tag}}
-
-    - name: Test things2
-      run: echo ${{steps.set_version.outputs.no-dash}}
-
-    - name: Test things3
-      run: echo ${{steps.set_version.outputs.tag}}
-
-#    - name: Build and Push
-#      uses: docker/build-push-action@v2
-#      with:
-#        push: true
-#        tags: |
-#          ${{secrets.DOCKERHUB_USERNAME}}/google-java-format:latest
-#          ${{secrets.DOCKERHUB_USERNAME}}/google-java-format:${{steps.set-version.outputs.no-dash}}
+    - name: Build and Push
+      uses: docker/build-push-action@v2
+      with:
+        push: true
+        tags: |
+          ${{secrets.DOCKERHUB_USERNAME}}/google-java-format:latest
+          ${{secrets.DOCKERHUB_USERNAME}}/google-java-format:${{steps.set_version.outputs.no-dash}}
