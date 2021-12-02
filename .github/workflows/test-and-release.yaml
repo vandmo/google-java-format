@@ -16,10 +16,12 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v2
         with:
+          context: .
           load: true
           push: false
+          tags: the-image
 
-      - run: docker run --rm ${{steps.docker_build.outputs.digest}}
+      - run: docker run --rm the-image
 
   release:
     needs: test
@@ -48,6 +50,7 @@ jobs:
       - name: Build and Push
         uses: docker/build-push-action@v2
         with:
+          context: .
           push: true
           tags: |
             ${{secrets.DOCKERHUB_USERNAME}}/google-java-format:latest
