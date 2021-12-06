@@ -44,8 +44,8 @@ jobs:
             const minor = parts[1]
             const subminor = parts[2]
             core.setOutput('major', major)
-            core.setOutput('major-minor', `${major}-${minor}`)
-            core.setOutput('major-minor-subminor', `${major}-${minor}-${subminor}`)
+            core.setOutput('major-minor', `${major}.${minor}`)
+            core.setOutput('major-minor-subminor', `${major}.${minor}.${subminor}`)
 
       - name: Login to Docker Hub
         uses: docker/login-action@v1
