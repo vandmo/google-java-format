@@ -1,4 +1,4 @@
-FROM openjdk:17-slim@sha256:aaa3b3cb27e3e520b8f116863d0580c438ed55ecfa0bc126b41f68c3f62f9774
+FROM eclipse-temurin:17@sha256:db0131a5b495048062f2567b08f0880fbc9c048960e682a2c4b5a7ab823a9ed8
 
 MAINTAINER Mikael Vandmo <mikael@vandmo.se>
 
