@@ -14,4 +14,5 @@ RUN \
  echo "${GOOGLE_JAVA_FORMAT_JAR_SHA512} ${GOOGLE_JAVA_FORMAT_JAR_FILENAME}" | sha512sum -c - && \
  chmod +x /usr/local/bin/google-java-format
 
+ENTRYPOINT []
 CMD ["/usr/local/bin/google-java-format"]
