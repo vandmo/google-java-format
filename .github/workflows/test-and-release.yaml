@@ -24,7 +24,7 @@ jobs:
           push: false
           tags: the-image
 
-      - run: docker run -it --rm the-image google-java-format --version
+      - run: docker run --rm the-image google-java-format --version
 
   release:
     needs: test
