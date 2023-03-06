@@ -1,4 +1,4 @@
-FROM eclipse-temurin:17@sha256:db0131a5b495048062f2567b08f0880fbc9c048960e682a2c4b5a7ab823a9ed8
+FROM eclipse-temurin:19@sha256:9b0ae96f84fc58a2db048671f381d110195fb150c83eebb200ae39eb47fe6e62
 
 MAINTAINER Mikael Vandmo <mikael@vandmo.se>
 
