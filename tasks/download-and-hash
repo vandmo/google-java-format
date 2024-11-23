@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
 set -eu -o pipefail
 
-curl https://github.com/google/google-java-format/releases/download/v1.25.0/google-java-format-1.25.0-all-deps.jar | sha512sum
+FILE=$(mktemp)
+URL="https://github.com/google/google-java-format/releases/download/v1.25.0/google-java-format-1.25.0-all-deps.jar"
+wget -O "$FILE" "$URL"
+sha512sum "$FILE"
