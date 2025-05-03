@@ -9,10 +9,11 @@ ENV GOOGLE_JAVA_FORMAT_JAR_SHA512=cb9c7e908f5aff900f179e9ff99e3b6a491c1e1c32b603
 
 ADD https://github.com/google/google-java-format/releases/download/v${GOOGLE_JAVA_FORMAT_VERSION}/${GOOGLE_JAVA_FORMAT_JAR_FILENAME} ${GOOGLE_JAVA_FORMAT_JAR_ABSOLUTE_PATH}
 COPY google-java-format.sh /usr/local/bin/google-java-format
-RUN \
- cd /opt && \
- echo "${GOOGLE_JAVA_FORMAT_JAR_SHA512} ${GOOGLE_JAVA_FORMAT_JAR_FILENAME}" | sha512sum -c - && \
- chmod +r "${GOOGLE_JAVA_FORMAT_JAR_FILENAME}" && \
+RUN\
+ set -eu -o pipefail\
+ cd /opt &&\
+ echo "${GOOGLE_JAVA_FORMAT_JAR_SHA512} ${GOOGLE_JAVA_FORMAT_JAR_FILENAME}" | sha512sum -c - &&\
+ chmod +r "${GOOGLE_JAVA_FORMAT_JAR_FILENAME}" &&\
  chmod +x /usr/local/bin/google-java-format
 
 ENTRYPOINT []
