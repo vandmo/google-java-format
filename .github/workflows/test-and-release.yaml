@@ -11,6 +11,10 @@ jobs:
 
       - uses: ludeeus/action-shellcheck@master
 
+      - uses: hadolint/hadolint-action@v3.1.0
+        with:
+          dockerfile: Dockerfile
+
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
 
