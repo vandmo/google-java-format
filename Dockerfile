@@ -9,6 +9,8 @@ ENV GOOGLE_JAVA_FORMAT_JAR_SHA512=cb9c7e908f5aff900f179e9ff99e3b6a491c1e1c32b603
 
 ADD https://github.com/google/google-java-format/releases/download/v${GOOGLE_JAVA_FORMAT_VERSION}/${GOOGLE_JAVA_FORMAT_JAR_FILENAME} ${GOOGLE_JAVA_FORMAT_JAR_ABSOLUTE_PATH}
 COPY google-java-format.sh /usr/local/bin/google-java-format
+
+# hadolint ignore=DL3003,DL4006,SC3040
 RUN <<EOT
   #!/usr/bin/env bash
   set -eu -o pipefail
