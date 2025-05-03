@@ -11,8 +11,7 @@ ADD https://github.com/google/google-java-format/releases/download/v${GOOGLE_JAV
 COPY google-java-format.sh /usr/local/bin/google-java-format
 
 # hadolint ignore=DL3003,DL4006,SC3040
-RUN <<EOT
-  #!/usr/bin/env bash
+RUN <<EOT /usr/bin/env bash
   set -eu -o pipefail
   cd /opt
   echo "${GOOGLE_JAVA_FORMAT_JAR_SHA512} ${GOOGLE_JAVA_FORMAT_JAR_FILENAME}" | sha512sum -c -
