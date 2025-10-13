@@ -2,7 +2,7 @@
 set -eu -o pipefail
 
 FILE=$(mktemp)
-VERSION=1.28.0
+VERSION=1.30.0
 URL="https://github.com/google/google-java-format/releases/download/v${VERSION}/google-java-format-${VERSION}-all-deps.jar"
 wget -O "$FILE" "$URL"
 sha512sum "$FILE"
