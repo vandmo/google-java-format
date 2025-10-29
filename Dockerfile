@@ -1,4 +1,4 @@
-FROM eclipse-temurin:17@sha256:06ee07a59dc7011f643baaa45889ecd15a0b9176490943b0e4379630e832ac2d
+FROM eclipse-temurin:25@sha256:3a35a62d3ece346cfde11b08fafdc3f99d3946d31d5ebc15d678b44a67c3b9ec
 
 LABEL org.opencontainers.image.authors="Mikael Vandmo <mikael@vandmo.se>"
 
