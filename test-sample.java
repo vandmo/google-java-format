@@ -4,8 +4,8 @@ public class TestSample {
   }
 
   public void testMethod() {
-    int x = 1;
-    int y = 2;
-    System.out.println(x + y);
+    int x=1;
+    int y  =  2;
+    System.out.println(x+y);
   }
 }

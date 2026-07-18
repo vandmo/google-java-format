@@ -1,15 +1,13 @@
 #!/usr/bin/env bash
 set -eu -o pipefail
 
-# Create a copy of the original file to compare
-TEST_FILE="/workspace/test-sample.java"
-ORIGINAL_FILE="/tmp/test-sample.original.java"
-cp "$TEST_FILE" "$ORIGINAL_FILE"
+ORIGINAL_FILE="/workspace/test-sample.java"
+TEST_FILE="/tmp/test-sample.java"
+cp "$ORIGINAL_FILE" "$TEST_FILE"
 
 echo "=== Original file ==="
 cat "$ORIGINAL_FILE"
 
-# Format the file
 java -jar "${GOOGLE_JAVA_FORMAT_JAR_ABSOLUTE_PATH}" --replace "$TEST_FILE"
 
 echo ""
