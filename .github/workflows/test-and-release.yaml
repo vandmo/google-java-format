@@ -30,7 +30,11 @@ jobs:
           push: false
           tags: the-image
 
-      - run: docker run --rm the-image google-java-format --version
+      - name: Test version output
+        run: docker run --rm the-image google-java-format --version
+
+      - name: Test formatting functionality
+        run: docker run --rm -v ${{ github.workspace }}:/workspace the-image /workspace/test-formatting.sh
 
   release:
     needs: test
